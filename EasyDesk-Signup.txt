@@ -1,0 +1,76 @@
+describe('template spec', 
+  
+  
+  {
+    viewportHeight: 1500,
+    viewportWidth: 1200,
+  },
+
+  
+  () => 
+  
+    {
+  
+        it('easydesk-signup', () => 
+      
+    {  
+  
+      // Public Site - Sign Up Page (URL)
+      
+      cy.visit('https://dev.easydesk.app/register')
+    
+      //First Name
+  
+      cy.get(':nth-child(1) > .border').type('Tahsin')
+
+      //Last Name
+
+      cy.get("input[placeholder='Enter your last name']").type('Ahmed')
+
+      //Work E-mail
+
+      cy.get("input[placeholder='i.e: email@domain.com']").type('tahsin08@yopmail.com')
+
+      //Password
+
+      cy.get("input[placeholder='Enter password']").type('Admin@123')
+
+      //Confirm Password
+
+      cy.get("input[placeholder='Enter confirm password']").type('Admin@123')
+
+      //Delay
+
+      cy.wait(30000)
+
+      //Button - Next
+
+      cy.contains('Next').click();
+
+      //Delay
+
+      cy.wait(30000)
+
+     //Create Organization - Page
+
+     cy.get("input[placeholder='Enter your organization name']").type('Automation')
+
+      //Delay
+
+      cy.wait(15000)
+
+      //Choose Country
+
+      cy.get("input[placeholder='Search location']").type('Bangladesh')
+
+      //Chosoe Sub-Domain
+
+      cy.get("input[placeholder='Enter your subdomain']").type('automation')
+
+      //Create and Explore - Button
+      
+      cy.get("button[type='button']", { timeout: 15000 }).should('exist').click();
+  
+    })
+  
+  })

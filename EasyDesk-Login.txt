@@ -1,0 +1,48 @@
+describe('template spec', 
+  
+  {
+    viewportHeight: 1500,
+    viewportWidth: 1200,
+  },
+
+
+  () => 
+  
+    {
+  
+    it('easydesk-login', () => 
+      
+    {
+  
+      //Public Site - URL
+
+      cy.visit('https://dev.easydesk.app')
+
+      //Delay
+     
+      cy.wait(400)
+
+      //Log In Button - Click
+      
+      cy.get('.gap-2\\.5 > [href="/login"] > :nth-child(1) > .text-border-regular > .flex > .whitespace-nowrap').click()
+
+      //Delay
+
+      cy.wait(400)
+
+      //Auth - Credential (E-mail and Password)
+
+      cy.get('input[placeholder="i.e: email@domain.com"]').type('tahsin@gain.media')
+      cy.get('.relative > .border').type('Admin@123')
+
+      //Delay
+
+      cy.wait(400)
+
+      //Log In Button - Click
+
+      cy.get('button[type="submit"]').click()
+  
+    })
+  
+  })
